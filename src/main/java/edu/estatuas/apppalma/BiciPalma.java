@@ -37,7 +37,18 @@ public class BiciPalma {
         TarjetaUsuario tarjetaUsuario = new TarjetaUsuario("000456789", true);
         logger.info("¿tarjeta de usuario activada? (true/false): " + tarjetaUsuario.isActivada());
 
+        estacion.retirarBicicleta(tarjetaUsuario);
         estacion.consultarAnclajes();
+
+        logger.info("anclajes Libres: " + estacion.anclajesLibres());
+
+        logger.info("**** caso TEST retirar bicicleta con tarjeta inactivada ****");
+        TarjetaUsuario tarjetaUsuarioDesactivada = new TarjetaUsuario("000456799", false);
+        logger.info("¿tarjeta de usuario activada? (true/false): " + tarjetaUsuarioDesactivada.isActivada());
+
+        estacion.retirarBicicleta(tarjetaUsuarioDesactivada);
+        estacion.consultarAnclajes();
+
         logger.info("anclajes Libres: " + estacion.anclajesLibres());
     }
 }
