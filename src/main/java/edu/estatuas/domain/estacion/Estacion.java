@@ -48,4 +48,14 @@ public class Estacion {
         }
 
     }
+
+    public int anclajesLibres() {
+        int libres = 0;
+        for (int i = 1; i < numAnclajes() + 1; i++) {
+            if (anclajes().getBiciAt(i) == null) {
+                libres++;
+            }
+        }
+        return libres;
+    }
 }
