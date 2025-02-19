@@ -13,13 +13,13 @@ public class EstacionTest
     
     @Test
     public void getId() {
-        Estacion estacion = new Estacion(1, "Manacor");
+        Estacion estacion = new Estacion(1, "Manacor", 0);
         assertEquals(1, estacion.getId());
     }
 
     @Test
     public void getDireccion() {
-        Estacion estacion = new Estacion(2, "Palma");
+        Estacion estacion = new Estacion(2, "Palma", 0);
         assertEquals("Palma", estacion.getDireccion());
     }
 }
