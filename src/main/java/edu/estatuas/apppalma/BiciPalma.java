@@ -2,11 +2,16 @@ package edu.estatuas.apppalma;
 
 import java.util.logging.Logger;
 
+import edu.estatuas.config.LoggerConfig;
 import edu.estatuas.domain.bicicleta.Bicicleta;
 import edu.estatuas.domain.estacion.Estacion;
 
 public class BiciPalma {
     private static final Logger logger = Logger.getLogger(BiciPalma.class.getName());
+
+    static {
+        LoggerConfig.init();
+    }
 
     public static void main(String[] args) {
 
