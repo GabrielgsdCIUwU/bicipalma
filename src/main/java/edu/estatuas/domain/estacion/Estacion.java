@@ -44,6 +44,7 @@ public class Estacion {
         for (int i = 1; i < numAnclajes() + 1; i++) {
             if (anclajes().getBiciAt(i) == null) {
                 anclajes().ocuparAnclaje(i, movil);
+                break;
             }
         }
 
