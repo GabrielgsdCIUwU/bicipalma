@@ -2,11 +2,15 @@ package edu.estatuas.domain.estacion;
 
 import java.util.logging.Logger;
 
+import edu.estatuas.config.LoggerConfig;
 import edu.estatuas.domain.bicicleta.Movil;
 
 public class Estacion {
 
     private static final Logger logger = Logger.getLogger("");
+    static {
+        LoggerConfig.init();
+    }
     private final int id;
     private final String direccion;
     private Anclajes anclajes;
