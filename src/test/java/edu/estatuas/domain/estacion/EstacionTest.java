@@ -21,4 +21,10 @@ public class EstacionTest
         Estacion estacion = new Estacion(2, "Palma", 0);
         assertEquals("Palma", estacion.getDireccion());
     }
+
+    @Test
+    public void getNumAnclajes() {
+        Estacion estacion = new Estacion(3, "Lore Ipsum", 20);
+        assertEquals(20, estacion.numAnclajes());
+    }
 }
