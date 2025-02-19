@@ -38,4 +38,10 @@ public class EstacionTest
         System.out.println(estacion.anclajes());
         assertEquals(bicicleta, estacion.anclajes().getBiciAt(1));
     }
+
+    @Test
+    public void anclajesLibres() {
+        Estacion estacion = new Estacion(5, "amet consectetur", 20);
+        assertEquals(20, estacion.anclajesLibres());
+    }
 }
