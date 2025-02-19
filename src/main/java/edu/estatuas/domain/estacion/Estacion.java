@@ -2,6 +2,8 @@ package edu.estatuas.domain.estacion;
 
 import java.util.logging.Logger;
 
+import edu.estatuas.domain.bicicleta.Movil;
+
 public class Estacion {
 
     private static final Logger logger = Logger.getLogger("");
@@ -27,13 +29,23 @@ public class Estacion {
         return anclajes().numAnclajes();
     }
 
-    private Anclajes anclajes() {
+    Anclajes anclajes() {
         return anclajes;
     }
 
-    public void consultarEstacion(){
+    public void consultarEstacion() {
         logger.info("id: " + getId());
         logger.info("direccion: " + getDireccion());
         logger.info("NumeroAnclajes: " + numAnclajes());
+    }
+
+    public void anclarBicicleta(Movil movil) {
+
+        for (int i = 1; i < numAnclajes() + 1; i++) {
+            if (anclajes().getBiciAt(i) == null) {
+                anclajes().ocuparAnclaje(i, movil);
+            }
+        }
+
     }
 }
