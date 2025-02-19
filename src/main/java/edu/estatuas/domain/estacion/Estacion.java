@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 
 import edu.estatuas.config.LoggerConfig;
 import edu.estatuas.domain.bicicleta.Movil;
+import edu.estatuas.domain.tarjetausuario.Autenticacion;
 
 public class Estacion {
 
@@ -55,6 +56,10 @@ public class Estacion {
 
     }
 
+    public boolean leerTarjetaUsuario(Autenticacion autenticacion) {
+        return autenticacion.isActivada();
+    }
+
     public int anclajesLibres() {
         int libres = 0;
         for (int i = 1; i < numAnclajes() + 1; i++) {
@@ -63,6 +68,21 @@ public class Estacion {
             }
         }
         return libres;
+    }
+
+    public void retirarBicicleta(Autenticacion autenticacion) {
+        if (!autenticacion.isActivada()) {
+            logger.info("No se puede retirar bicicleta sin tarjeta de usuario activada");
+            return;
+        }
+
+        for (int i = 1; i < numAnclajes(); i++) {
+            if (anclajes().getBiciAt(i) != null) {
+                anclajes.anclajes()[i].liberarBici();
+                mostrarBicicleta(anclajes().getBiciAt(i), i);
+                break;
+            }
+        }
     }
 
     public void consultarAnclajes() {
@@ -78,5 +98,9 @@ public class Estacion {
 
     private void mostrarAnclaje(Movil movil, int numAnclaje) {
         logger.info("bicicleta: " + movil + " anclada en el anclaje: " + numAnclaje);
+    }
+
+    private void mostrarBicicleta(Movil movil, int numAnclaje) {
+        logger.info("bicicleta retirada: " + movil + " del anclaje: " + numAnclaje);
     }
 }
