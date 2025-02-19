@@ -15,16 +15,16 @@ public class Estacion {
         this.anclajes = new Anclajes(numAnclajes);
     }
 
-    public int getId() {
+    int getId() {
         return id;
     }
 
-    public String getDireccion() {
+    String getDireccion() {
         return direccion;
     }
 
-    private int numAnclajes() {
-        return anclajes.numAnclajes();
+    int numAnclajes() {
+        return anclajes().numAnclajes();
     }
 
     private Anclajes anclajes() {
@@ -33,7 +33,7 @@ public class Estacion {
 
     public void consultarEstacion(){
         logger.info("id: " + getId());
-        logger.info("direccio: " + getDireccion());
+        logger.info("direccion: " + getDireccion());
         logger.info("NumeroAnclajes: " + numAnclajes());
     }
 }
