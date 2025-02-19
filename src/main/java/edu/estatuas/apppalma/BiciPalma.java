@@ -12,7 +12,6 @@ public class BiciPalma {
         logger.info("**** caso TEST visualizar estado de la estacion ****");
 
         Estacion estacion = new Estacion(1, "Manacor", 2);
-        logger.info("Dirección: " + estacion.getDireccion());
-        logger.info("ID: " + estacion.getId());
+        estacion.consultarEstacion();
     }
 }
