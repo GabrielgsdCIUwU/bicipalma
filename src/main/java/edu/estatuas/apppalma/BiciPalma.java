@@ -21,10 +21,13 @@ public class BiciPalma {
 
         logger.info("*** caso TEST anclar bicicletas ****");
 
-        for (int i = 200; i < 204; i++) {
+        int[] bicicletas = {200, 201, 202, 203};
+        for (int i : bicicletas) {
             estacion.anclarBicicleta(new Bicicleta(i));
         }
+        logger.info("anclajes Libres tras generar "+ bicicletas.length +" bicis: " + estacion.anclajesLibres());
 
+        logger.info("**** caso TEST consultar bicicletas ancladas ****");
         estacion.consultarAnclajes();
     }
 }
