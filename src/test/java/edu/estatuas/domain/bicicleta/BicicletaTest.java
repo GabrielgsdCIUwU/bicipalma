@@ -1,10 +1,9 @@
-package edu.estatuas;
+package edu.estatuas.domain.bicicleta;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import edu.estatuas.domain.bicicleta.Bicicleta;
 
 public class BicicletaTest {
 
