@@ -59,4 +59,14 @@ public class Estacion {
         }
         return libres;
     }
+
+    public void consultarAnclajes() {
+
+        for (int i = 1; i < numAnclajes() + 1; i++) {
+            if (anclajes().getBiciAt(i) != null) {
+                logger.info("bicicleta: " + anclajes().getBiciAt(i) + " anclada en el anclaje: " + i);
+            }
+        }
+        logger.info("anclajes Libres tras generar "+ (numAnclajes() - anclajesLibres()) + " bicis: " + anclajesLibres());
+    }
 }
