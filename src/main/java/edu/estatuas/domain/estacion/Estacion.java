@@ -78,7 +78,7 @@ public class Estacion {
 
         for (int i = 1; i < numAnclajes(); i++) {
             if (anclajes().getBiciAt(i) != null) {
-                anclajes.anclajes()[i].liberarBici();
+                anclajes.anclajes()[i - 1].liberarBici();
                 mostrarBicicleta(anclajes().getBiciAt(i), i);
                 break;
             }
