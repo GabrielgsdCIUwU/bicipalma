@@ -44,6 +44,7 @@ public class Estacion {
         for (int i = 1; i < numAnclajes() + 1; i++) {
             if (anclajes().getBiciAt(i) == null) {
                 anclajes().ocuparAnclaje(i, movil);
+                mostrarAnclaje(movil, i);
                 break;
             }
         }
@@ -64,9 +65,14 @@ public class Estacion {
 
         for (int i = 1; i < numAnclajes() + 1; i++) {
             if (anclajes().getBiciAt(i) != null) {
-                logger.info("bicicleta: " + anclajes().getBiciAt(i) + " anclada en el anclaje: " + i);
+                logger.info("Anclaje "+ i + " " + anclajes.getBiciAt(i));
+            } else {
+                logger.info("Anclaje "+ i + " libre");
             }
         }
-        logger.info("anclajes Libres tras generar "+ (numAnclajes() - anclajesLibres()) + " bicis: " + anclajesLibres());
+    }
+
+    private void mostrarAnclaje(Movil movil, int numAnclaje) {
+        logger.info("bicicleta: " + movil + " anclada en el anclaje: " + numAnclaje);
     }
 }
