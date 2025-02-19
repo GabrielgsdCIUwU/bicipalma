@@ -1,11 +1,10 @@
-package edu.estatuas;
+package edu.estatuas.domain.estacion;
 
 import static org.junit.Assert.assertEquals;
 
 
 import org.junit.Test;
 
-import edu.estatuas.domain.estacion.Estacion;
 
 
 public class EstacionTest 
