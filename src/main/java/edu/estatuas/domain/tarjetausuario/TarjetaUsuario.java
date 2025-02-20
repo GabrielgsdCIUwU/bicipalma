@@ -17,4 +17,9 @@ public class TarjetaUsuario implements Autenticacion {
     public void setActivada(boolean activada) {
         this.activada = activada;
     }
+
+    @Override
+    public String toString() {
+        return this.id;
+    }
 }

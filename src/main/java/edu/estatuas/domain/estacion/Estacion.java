@@ -22,26 +22,25 @@ public class Estacion {
         this.anclajes = new Anclajes(numAnclajes);
     }
 
-    int getId() {
+    private int getId() {
         return id;
     }
 
-    String getDireccion() {
+    private String getDireccion() {
         return direccion;
     }
 
-    int numAnclajes() {
+    private int numAnclajes() {
         return anclajes().numAnclajes();
     }
 
-    Anclajes anclajes() {
+    private Anclajes anclajes() {
         return anclajes;
     }
 
     public void consultarEstacion() {
-        logger.info("id: " + getId());
-        logger.info("direccion: " + getDireccion());
-        logger.info("NumeroAnclajes: " + numAnclajes());
+        logger.info(this.toString());
+        return;
     }
 
     public void anclarBicicleta(Movil movil) {
@@ -102,5 +101,12 @@ public class Estacion {
 
     private void mostrarBicicleta(Movil movil, int numAnclaje) {
         logger.info("bicicleta retirada: " + movil + " del anclaje: " + numAnclaje);
+    }
+
+    @Override
+    public String toString() {
+        return "ID: " + getId() + '\n' +
+            "Dirección: " + getDireccion() + '\n' +
+            "Numero Anclajes: " + numAnclajes();
     }
 }
