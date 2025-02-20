@@ -29,5 +29,8 @@ class Anclaje {
         this.ocupado = false;
     }
 
-    // TODO: implement toString
+    @Override
+    public String toString() {
+        return "Ocupado: " + Boolean.toString(isOcupado());
+    }
 }

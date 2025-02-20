@@ -32,4 +32,9 @@ class Anclajes {
     Movil getBiciAt(int numAnclaje) {
         return anclajes[numAnclaje - 1].getBici();
     }
+
+    @Override
+    public String toString() {
+        return "Numero de anclajes: " + Integer.toString(numAnclajes());
+    }
 }
