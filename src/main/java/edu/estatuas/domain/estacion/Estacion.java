@@ -22,19 +22,19 @@ public class Estacion {
         this.anclajes = new Anclajes(numAnclajes);
     }
 
-    int getId() {
+    private int getId() {
         return id;
     }
 
-    String getDireccion() {
+    private String getDireccion() {
         return direccion;
     }
 
-    int numAnclajes() {
+    private int numAnclajes() {
         return anclajes().numAnclajes();
     }
 
-    Anclajes anclajes() {
+    private Anclajes anclajes() {
         return anclajes;
     }
 
@@ -107,6 +107,6 @@ public class Estacion {
     public String toString() {
         return "ID: " + getId() + '\n' +
             "Dirección: " + getDireccion() + '\n' +
-            "Numero Anclajes: " + getId();
+            "Numero Anclajes: " + numAnclajes();
     }
 }
