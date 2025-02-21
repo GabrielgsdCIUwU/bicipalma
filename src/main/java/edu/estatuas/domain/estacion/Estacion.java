@@ -40,7 +40,6 @@ public class Estacion {
 
     public void consultarEstacion() {
         logger.info(this.toString());
-        return;
     }
 
     public void anclarBicicleta(Movil movil) {
