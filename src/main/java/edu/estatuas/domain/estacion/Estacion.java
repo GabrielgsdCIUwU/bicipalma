@@ -78,9 +78,14 @@ public class Estacion {
             if (anclajes().getBiciAt(i) != null) {
                 anclajes.anclajes()[i - 1].liberarBici();
                 mostrarBicicleta(anclajes().getBiciAt(i), i);
-                break;
+                return;
             }
         }
+
+        /*
+         * Se ejecuta el siguiente código al no encontrar ningún móvil
+         */
+         logger.warning("No hay bicicletas en la estación");
     }
 
     public void consultarAnclajes() {
