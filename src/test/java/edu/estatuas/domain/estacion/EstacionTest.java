@@ -18,4 +18,12 @@ public class EstacionTest {
         Estacion estacion = new Estacion(5, "amet consectetur", 20);
         assertEquals(20, estacion.anclajesLibres());
     }
+
+    @Test
+    public void anclarBicicletaVacia() {
+        Estacion estacion = new Estacion(6, "amet consectetur", 1);
+
+        estacion.anclarBicicleta(null);
+        assertEquals(1, estacion.anclajesLibres());
+    }
 }
