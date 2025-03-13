@@ -50,5 +50,16 @@ public class BiciPalma {
         estacion.consultarAnclajes();
 
         logger.info("anclajes Libres: " + estacion.anclajesLibres());
+
+
+        logger.info("**** caso TEST retirar bicicleta en una estación sin bicicletas ****");
+        Estacion estacionVacia = new Estacion(2, "Inca", 5);
+        logger.info("¿tarjeta de usuario activada? (true/false): " + tarjetaUsuario.isActivada());
+
+        estacionVacia.retirarBicicleta(tarjetaUsuario);
+        estacionVacia.consultarAnclajes();
+
+        logger.info("anclajes Libres: " + estacionVacia.anclajesLibres());
+        
     }
 }
